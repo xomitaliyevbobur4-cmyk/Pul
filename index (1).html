@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Смета</title>
+<link rel="stylesheet" href="smeta-style.css">
+</head>
+<body>
+<h1>Смета</h1>
+
+<div class="card">
+  <label for="client">Клиент / объект</label>
+  <input id="client" placeholder="Например: Иванов, ул. Ленина 5, кв. 12">
+</div>
+
+<div class="card">
+  <h2>Работы</h2>
+  <div id="works"></div>
+  <button class="ghost add" onclick="addWork()">+ Добавить работу</button>
+</div>
+
+<div class="card">
+  <h2>Материалы</h2>
+  <div id="mats"></div>
+  <button class="ghost add" onclick="addMat()">+ Добавить материал</button>
+</div>
+
+<div class="total">
+  <div><span>Работы</span><span id="tw">0 ₽</span></div>
+  <div><span>Материалы</span><span id="tm">0 ₽</span></div>
+  <div class="big"><span>Итого</span><span id="tt">0 ₽</span></div>
+</div>
+
+<div class="btns">
+  <button onclick="copyText()">Скопировать для клиента</button>
+  <button class="ghost" onclick="doPrint()">Печать / PDF</button>
+  <button id="rbtn" class="ghost" onclick="resetAll()">Очистить</button>
+</div>
+<div id="msg" role="status"></div>
+
+<noscript>Включите JavaScript.</noscript>
+<script src="smeta-app.js"></script>
+<script>if(typeof draw!=="function"){document.getElementById("msg").textContent="Файл smeta-app.js не найден. Проверьте его название в репозитории."}</script>
+</body>
+</html>
